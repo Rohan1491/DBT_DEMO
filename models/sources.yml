@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: demo           # How you'll reference the source in your SQL (e.g., source('my_source_name', 'table_name'))
+    database: demo    # The actual database name in your warehouse
+    schema: demo_schema
+    tables:
+      - name: biketable
+      - name: weather
