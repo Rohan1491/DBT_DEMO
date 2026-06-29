@@ -87,7 +87,8 @@ date_dimension AS (
         TO_CHAR(date_day, 'YYYY') || '-' || TO_CHAR(date_day, 'MM')
                                                      AS year_month,        -- '2024-06'
         TO_CHAR(date_day, 'YYYY') || '-Q' || QUARTER(date_day)
-                                                     AS year_quarter        -- '2024-Q2'
+                                                     AS year_quarter,        -- '2024-Q2'
+    {{get_season('date_day')}}  as Season
 
     FROM date_spine
 
