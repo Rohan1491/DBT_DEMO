@@ -1,4 +1,4 @@
-name: 'dBT_DEMO'
+name: 'DBT_DEMO'
 version: '1.0.0'
 config-version: 2
 
@@ -16,4 +16,4 @@ clean-targets:
 
 models:
   your_project_name:
-    +materialized: view
+    +materialized: table
