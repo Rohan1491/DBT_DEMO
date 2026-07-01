@@ -16,4 +16,4 @@ clean-targets:
 
 models:
   your_project_name:
-    +materialized: view
+    +materialized: table

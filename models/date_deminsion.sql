@@ -1,8 +1,12 @@
+{{ config(
+    materialized = 'table'
+) }}
+
 WITH date_spine AS (
 
     SELECT
         DATEADD(DAY, SEQ4(), '2020-01-01'::DATE) AS date_day
-    FROM {{source('demo', 'biketable') }} where ride_id <> 'ride_id'
+    FROM {{ ref('Stage_bike') }} 
 ),
 
 date_dimension AS (

@@ -1,5 +1,9 @@
+{{ config(
+    materialized = 'table'
+) }}
+
 with bike as (
-    select 
+    SELECT 
         ride_id ,
         to_timestamp(started_at) as started_at,
         to_timestamp(ended_at) as ended_at ,

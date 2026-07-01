@@ -1,3 +1,7 @@
+{{ config(
+    materialized = 'table'
+) }}
+
 WITH TRIPS AS (
     SELECT 
         RIDE_ID,
@@ -7,6 +11,5 @@ WITH TRIPS AS (
         MEMBER_CASUAL AS MEMBER_CASUAL,
         TIMESTAMPDIFF(SECOND,TO_TIMESTAMP(STARTED_AT),TO_TIMESTAMP(ENDED_AT)) AS TRIP_DURATION_SECONDS
     FROM {{ ref('Stage_bike') }}
-    WHERE RIDE_ID != 'ride_id'
 )
 SELECT * FROM TRIPS
